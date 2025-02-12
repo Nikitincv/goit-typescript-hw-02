@@ -1,0 +1,10 @@
+.imageModal {
+  background-color: white;
+  padding: 0;
+  width: 100%;
+  max-width: 900px;
+  max-height: 80vh;
+  overflow: hidden;
+  border-radius: 8px;
+  outline: none;
+}
