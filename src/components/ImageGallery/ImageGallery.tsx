@@ -4,7 +4,7 @@ interface Image {
   id: string;
   alt_description: string;
   urls: {
-    small: string;
+    small?: string;
     regular: string;
   };
 }
