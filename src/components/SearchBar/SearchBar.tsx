@@ -1,15 +1,24 @@
 import toast from "react-hot-toast";
 import { CiSearch } from "react-icons/ci";
 import s from "./SearchBar.module.css";
-const SearchBar = ({ onSubmit }) => {
-  const handelSubmit = (e) => {
+import { FormEvent } from "react";
+
+interface SearchBarProps {
+  onSubmit: (value: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
+  const handelSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const value = e.target.elements.text.value;
+    const form = e.target as HTMLFormElement;
+    const input = form.elements.namedItem("text") as HTMLInputElement;
+
+    const value = input.value;
     if (value === "") {
       return toast.error("This didn't work.");
     }
     onSubmit(value);
-    e.target.reset();
+    (e.target as HTMLFormElement).reset();
   };
   return (
     <header className={s.header}>

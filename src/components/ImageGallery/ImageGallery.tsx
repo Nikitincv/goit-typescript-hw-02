@@ -1,5 +1,20 @@
 import s from "./ImageGallery.module.css";
-const ImageGallery = ({ images, openModal }) => {
+
+interface Image {
+  id: string;
+  alt_description: string;
+  urls: {
+    small: string;
+    regular: string;
+  };
+}
+
+interface ImageGalleryProps {
+  images: Image[];
+  openModal: (imageUrl: string) => void;
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ images, openModal }) => {
   return (
     <ul className={s.imgBox}>
       {images.map(({ id, alt_description, urls }) => {

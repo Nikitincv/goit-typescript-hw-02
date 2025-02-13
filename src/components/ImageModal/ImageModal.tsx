@@ -11,7 +11,18 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
   },
 };
-const ImageModal = ({ modalIsOpen, closeModal, modalImage }) => {
+
+interface ImageModalProps {
+  modalIsOpen: boolean;
+  closeModal: () => void;
+  modalImage: string;
+}
+
+const ImageModal: React.FC<ImageModalProps> = ({
+  modalIsOpen,
+  closeModal,
+  modalImage,
+}) => {
   return (
     <div className={s.imageModalBox}>
       <Modal

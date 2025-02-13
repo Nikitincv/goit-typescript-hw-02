@@ -1,16 +1,16 @@
 import { Audio } from "react-loader-spinner";
 import s from "./Loader.module.css";
-const Loader = () => {
+const Loader: React.FC = () => {
   return (
     <div className={s.loader}>
       <Audio
         height="80"
         width="80"
-        radius="9"
+        // radius="9"
         color="green"
         ariaLabel="loading"
-        wrapperStyle
-        wrapperClass
+        wrapperStyle={{}}
+        wrapperClass=""
       />
     </div>
   );
